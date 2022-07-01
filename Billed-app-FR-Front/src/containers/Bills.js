@@ -38,7 +38,7 @@ export default class {
             try {
               return {
                 ...doc,
-                date: formatDate(doc.date),
+                date: doc.date,
                 status: formatStatus(doc.status)
               }
             } catch(e) {
@@ -52,13 +52,6 @@ export default class {
               }
             }
           })
-          console.log('length', bills.length)
-          //console.log(bills)
-        let test = bills
-        const antiChrono = (a, b) => ((a < b) ? 1 : -1)
-        //const datesSorted = bills.sort(antiChrono)
-        //console.log(datesSorted)
-        console.log(["14 Dec. 20","22 Nov. 21","15 Dec. 20"].sort(antiChrono))
         return bills
       })
     }
