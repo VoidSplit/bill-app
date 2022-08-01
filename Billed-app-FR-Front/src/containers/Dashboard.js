@@ -85,15 +85,11 @@ export default class {
   }
 
   handleEditTicket(e, bill, bills) {
-    console.log(bill)
     if (this.counter === undefined || this.id !== bill.id) this.counter = 0
     if (this.id === undefined || this.id !== bill.id) this.id = bill.id
     
     if (this.counter % 2 === 0) {
-      console.log(this.counter % 2)
-      console.log('1')
       bills.forEach(b => {
-        console.log('2')
         $(`#open-bill${b.id}`).css({ background: '#0D5AE5' })
       })
       $(`#open-bill${bill.id}`).css({ background: '#2A2B35' })
@@ -101,8 +97,6 @@ export default class {
       $('.vertical-navbar').css({ height: '150vh' })
       this.counter ++
     } else {
-      console.log(this.counter % 2)
-      console.log('3')
       $(`#open-bill${bill.id}`).css({ background: '#0D5AE5' })
 
       $('.dashboard-right-container div').html(`
@@ -156,10 +150,6 @@ export default class {
       //$(`#open-bill${bill.id}`).click((e) => console.log(e, bill, bills))
       
     })
-    console.log(
-      filteredBills(bills, getStatus(this.index)),
-      bills
-    )
 
     return bills
 
