@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import LoginUI from "../views/LoginUI";
 import Login from "../containers/Login.js";
 import { ROUTES } from "../constants/routes";
@@ -176,7 +172,6 @@ describe("Given that I am a user on login page", () => {
       fireEvent.change(inputPasswordUser, {
         target: { value: inputData.password },
       });
-      console.log(inputPasswordUser.value)
       expect(inputPasswordUser.value).toBe(inputData.password);
 
       const form = screen.getByTestId("form-admin");
